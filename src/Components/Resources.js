@@ -1,43 +1,45 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 import axios from 'axios'
 
 
-const Resources = (props) =>{
+const Resources = (props) => {
     const [imageView, setImageView] = useState(true);
-    const onClick =() =>{setImageView((state) => {
-        return !state;
-    })};
+    const onClick = () => {
+        setImageView((state) => {
+            return !state;
+        })
+    };
 
     const initialState = {
-        data:[],
-        loading:true,
-        error:null,
+        data: [],
+        loading: true,
+        error: null,
     }
 
     const [state, setState] = useState(initialState);
 
-    const getData = async() =>{
-        try{
+    const getData = async () => {
+        try {
             const response = await axios.get(props.path)
             setState({
-                data:response.data,
-                loading:false,
-                error:null
+                data: response.data,
+                loading: false,
+                error: null
             }
             )
-        } catch(error){
+        } catch (error) {
             console.error(error)
         }
     }
-    useEffect( () =>{
+    useEffect(() => {
         getData()
-    },[props.reload]
+    }, [props.reload]
     )
 
-    
-    return(
-        <div onClick={onClick} className='roll-out' key={Math.random()}>
-            {imageView ? props.render(state) : props.imageDesc(state) }
+
+    return (
+        <div onClick={onClick} className='roll-out'>
+            {imageView ? props.render(state) : props.imageDesc(state)}
         </div>
     )
 }
