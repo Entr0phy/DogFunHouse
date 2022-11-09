@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/DogFunHouse/static/css/main.14ba98fe.css",
+    "main.js": "/DogFunHouse/static/js/main.d806e24d.js",
+    "index.html": "/DogFunHouse/index.html",
+    "main.14ba98fe.css.map": "/DogFunHouse/static/css/main.14ba98fe.css.map",
+    "main.d806e24d.js.map": "/DogFunHouse/static/js/main.d806e24d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.14ba98fe.css",
+    "static/js/main.d806e24d.js"
+  ]
+}
