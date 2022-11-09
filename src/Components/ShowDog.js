@@ -70,7 +70,7 @@ const ShowDog = () => {
                     [...Array(9)].map((_, index) => (
                         <div key={String(index)}>
                             <Resources
-                                path={`${dogUrl}?v{index}`}
+                                path={`${dogUrl}?v${index}`}
                                 render={render}
                                 imageDesc={imageDesc}
                                 reload={reload}
