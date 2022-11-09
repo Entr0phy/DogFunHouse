@@ -1,8 +1,7 @@
 import Resources from "./Resources";
 import {useState, useEffect} from 'react';
 const dogUrl = 'https://dog.ceo/api/breeds/image/random';
-const keyArray = [1,2,3,4,5,6,7,8,9];
-const ShowDog = () =>{
+const ShowDog = () => {
     //initialise a state to count the page numbers
     const [page, setPage] = useState(1);
 
@@ -12,80 +11,80 @@ const ShowDog = () =>{
 
     //a function that changes the value of reload, this value changed will then be updated and passed down
     // to resources causing it to rerender
-    const onClickPrev = () =>{
+    const onClickPrev = () => {
         setReload(!reload)
 
-        setPage((state) =>{
-           return state-1;
+        setPage((state) => {
+            return state - 1;
         })
     }
 
-    const onClickNext = () =>{
-        setPage((state) =>{
-            return state+1;
+    const onClickNext = () => {
+        setPage((state) => {
+            return state + 1;
         })
         setReload(!reload)
     }
 
     //function that renders out the image
-    const render = (data) =>{
-        if(data.loading === true){
-            return(
+    const render = (data) => {
+        if (data.loading === true) {
+            return (
                 <p className="">Loading...</p>
             )
         }
         const imagePath = data.data.message
-        return(
-            <div key = {data.key} className = 'iContainer'>
-                <img src={imagePath} alt='image' className="image"></img>
+        return (
+            <div key={data.key} className='iContainer'>
+                <img src={imagePath} alt='dog' className="image" />
             </div>
         )
     }
 
     //function that renders out the description of the dog
-    const imageDesc = (data) =>{
-        if(data.loading === true){
-            return(
+    const imageDesc = (data) => {
+        if (data.loading === true) {
+            return (
                 <p>Loading...</p>
             )
         }
         // the breed of the dog is obtain through manipulating the api request
         let breedArray = data.data.message.split('/')
         return (
-                <div className="tContainer">
+            <div className="tContainer">
                 <h2 className="text">
                     Breed:  <br />
                     {breedArray[4]}
                 </h2>
-                </div>
+            </div>
         )
     }
 
-   // useEffect(()=>{
+    // useEffect(()=>{
     //    document.title = `Page 1 of ${page}`
     //})
-    return(
+    return (
         <div>
-        <div className="imageContainer">
-        {
-        keyArray.map( key =>(
-            <div key={key} >
-                    <Resources 
-                path=`${dogUrl}?v{key}`
-                render = {render}
-                imageDesc = {imageDesc}
-                reload = {reload}
-                />
-        </div>
-        ))
-        }
-        </div>
+            <div className="imageContainer">
+                {
+                    [...Array(9)].map((_, index) => (
+                        <div key={String(index)}>
+                            <Resources
+                                path={`${dogUrl}?v{index}`}
+                                render={render}
+                                imageDesc={imageDesc}
+                                reload={reload}
+                            />
+                        </div>
+                    ))
+                }
+            </div>
 
-        <div className="pageButtons">
-            <button id="prev" onClick={onClickPrev} disabled = {page ===1}>Prev</button>
-            <p>Page {page}/5</p>
-            <button id="next" onClick={onClickNext} disabled = {page === 5}>Next</button>
-        </div>
+            <div className="pageButtons">
+                <button id="prev" onClick={onClickPrev} disabled={page === 1}>Prev</button>
+                <p>Page {page}/5</p>
+                <button id="next" onClick={onClickNext} disabled={page === 5}>Next</button>
+            </div>
         </div>
     )
 }
