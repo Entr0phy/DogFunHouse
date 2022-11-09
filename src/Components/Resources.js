@@ -3,7 +3,6 @@ import axios from 'axios'
 
 
 const Resources = (props) => {
-    console.log(props);
     const [imageView, setImageView] = useState(true);
     const onClick = () => {
         setImageView((state) => {
