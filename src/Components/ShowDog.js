@@ -71,7 +71,7 @@ const ShowDog = () =>{
         keyArray.map( key =>(
             <div key={key} >
                     <Resources 
-                path={dogUrl}
+                path=`${dogUrl}?v{key}`
                 render = {render}
                 imageDesc = {imageDesc}
                 reload = {reload}
