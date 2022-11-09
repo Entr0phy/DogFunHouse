@@ -5,9 +5,160 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 1600px;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.Header{
+  display: flex;
+  background-color: aliceblue;
+  margin-top: -22px;
+  font-family: 'Poor Story';
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  size: 3rem;
+}
+
+.Header h1{
+  padding: 1rem;
+  display: inline-block;
+  color: rgb(88, 82, 74);
+  
+}
+
+.button{
+  right: 0;
+  position: absolute;
+}
+
+button{
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(172, 31, 31, 0.5);
+  border-radius: 8px;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+button:hover{
+  background: rgba(172, 31, 31, 0.2);
+  color: #fff;
+}
+
+.btn{
+  color: #2e2e2e;
+  background-color: aliceblue;
+  font-family: 'Oswald',sans-serif;
+  padding: 0.5rem;
+}
+
+p{
+  font-family: 'Poor Story';
+}
+
+h4{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.imageContainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #d5dbee;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.image{
+  width: 300px;
+  height: 300px;
+  margin: 1rem;
+  border: 1px solid black;
+  border-radius: 16px;
+  background-color: antiquewhite;
+  text-align: center;
+  object-fit: cover;
+}
+
+.iContainer{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.tContainer{
+  background-color: beige;
+  margin: 1rem;
+  text-align: center;
+  border-radius: 16px;
+  border: 1px solid black;
+}
+.text{
+  padding-top: 100px;
+  padding-bottom: 100px;
+  font-family: 'Poor Story';
+}
+
+@keyframes rollout {
+  0% {
+    transform: perspective(300px) rotateY(0);
+    animation-timing-function: ease-out;
+ }
+ 40% {
+    transform: perspective(300px) rotateY(170deg);
+    animation-timing-function: ease-out;
+ }
+ 100% {
+    transform: perspective(300px) scale(1);
+    animation-timing-function: ease-in;
+ }
+}
+
+.roll-out {
+  animation: rollout 0.3s;
+}
+
+.pageButtons{
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  background-color: #d5dbee;
+}
+@media (max-width: 992px) {
+  .imageContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px){
+  .imageContainer{
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header{
+    size: 1rem;
+    flex-direction: column;
+    justify-content: none;
+    text-align: none;
+    align-items: none;
+  }
+  header h1{
+    font-size: smaller;
+    display: flex;
+  }
+  .headerText{
+    text-align: left;
+  }
+
+  button{
+    margin: 0;
+  }
 }
