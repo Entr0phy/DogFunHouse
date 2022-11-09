@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/DogFunHouse/static/css/main.14ba98fe.css",
-    "main.js": "/DogFunHouse/static/js/main.d806e24d.js",
+    "main.js": "/DogFunHouse/static/js/main.6585668d.js",
     "index.html": "/DogFunHouse/index.html",
     "main.14ba98fe.css.map": "/DogFunHouse/static/css/main.14ba98fe.css.map",
-    "main.d806e24d.js.map": "/DogFunHouse/static/js/main.d806e24d.js.map"
+    "main.6585668d.js.map": "/DogFunHouse/static/js/main.6585668d.js.map"
   },
   "entrypoints": [
     "static/css/main.14ba98fe.css",
-    "static/js/main.d806e24d.js"
+    "static/js/main.6585668d.js"
   ]
 }
