@@ -5,3 +5,5 @@ A Simple Project that displays that displays cute images of dogs. Image is fetch
 Tech Stack used:
 React.Js
 Axios
+
+Sample of website is available at github pages under the same repo name
